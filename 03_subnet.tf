@@ -37,3 +37,24 @@ resource "aws_subnet" "SUUUU_prib" {
       "Name" = "suuu_prib"
   }
 }
+
+  # 가용영역 a의 private DB Subnet
+resource "aws_subnet" "SUUUU_pridba" {
+  vpc_id  = aws_vpc.SUUUU.id
+  cidr_block = "10.0.4.0/24"
+  availability_zone = "ap-northeast-2a"
+  tags = {
+      "Name" = "suuu_pria"
+  }
+}
+
+
+   # 가용영역 c의 private DB Subnet
+resource "aws_subnet" "SUUUU_pridbc" {
+  vpc_id  = aws_vpc.SUUUU.id
+  cidr_block = "10.0.5.0/24"
+  availability_zone = "ap-northeast-2c"
+  tags = {
+      "Name" = "suuu_pric"
+  }
+}
